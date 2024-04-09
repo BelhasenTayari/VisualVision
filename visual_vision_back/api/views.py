@@ -43,10 +43,25 @@ class PredictImageView(APIView):
         
 
         prediction = model.predict(img_array)
-        predicted_label = np.argmax(prediction) #TODO:interpret label
+        predicted_label = np.argmax(prediction)
         confidence = np.max(prediction)
+        predicted_class=''
+        if int(model_id)==1:
+            categories = {
+                0: "T-shirt/top",
+                1: "Trouser",
+                2: "Pullover",
+                3: "Dress",
+                4: "Coat",
+                5: "Sandal",
+                6: "Shirt",
+                7: "Sneaker",
+                8: "Bag",
+                9: "Ankle boot"
+            }
+            predicted_class=categories[predicted_label]
 
         
-        return Response( {"predicted_class": predicted_label,"confidence": confidence},status=status.HTTP_200_OK)
+        return Response( {"predicted_class": predicted_class,"confidence": confidence},status=status.HTTP_200_OK)
     
 
