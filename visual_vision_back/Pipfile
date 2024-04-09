@@ -16,7 +16,6 @@ tzdata = "==2024.1"
 numpy = "*"
 drf-yasg = "*"
 tensorflow = "==2.9"
-joblib = "*"
 keras = "*"
 
 [dev-packages]
