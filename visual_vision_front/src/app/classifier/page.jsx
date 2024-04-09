@@ -6,8 +6,9 @@ import ArchitectureSelection from "@/components/ArchitectureSelection";
 import ImageUpload from "@/components/ImageUpload";
 
 const page = () => {
-  const [selectedDataBase, setselectedDataBase] = useState("");
-  const [selectedArchitecture, setselectedArchitecture] = useState("");
+  const [selectedDataBase, setselectedDataBase] = useState("clothing");
+  const [selectedArchitecture, setselectedArchitecture] =
+    useState("visionarynet");
 
   return (
     <div className="min-h-screen bg-deep-900 ">
@@ -25,7 +26,10 @@ const page = () => {
         </div>
 
         <div>
-          <ImageUpload />
+          <ImageUpload
+            selectedDataBase={selectedDataBase}
+            selectedArchitecture={selectedArchitecture}
+          />
           <div className="bg-slate-200 border hidden border-gray-800 py-8 px-3 rounded-2xl shadow-xl mt-4">
             <h1 className="font-bold text-2xl mb-4">Result</h1>
             <p>Predict: </p>
