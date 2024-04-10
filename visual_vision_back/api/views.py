@@ -46,7 +46,7 @@ class PredictImageView(APIView):
         predicted_label = np.argmax(prediction)
         confidence = np.max(prediction)
         predicted_class=''
-        if int(model_id)==1:
+        if int(model_id) in [1,2,3]:
             categories = {
                 0: "T-shirt/top",
                 1: "Trouser",
