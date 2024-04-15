@@ -14,6 +14,7 @@ class AIModel(models.Model):
     confusion_matrix = models.ImageField(upload_to='images/',null=True)
     architecture = models.JSONField(default=dict)
     model_file = models.FileField(upload_to='models/')
+    dataset = models.CharField(max_length=100,default='')
     created_at = models.DateTimeField(auto_now_add=True)
 
     def set_precision(self, array):
