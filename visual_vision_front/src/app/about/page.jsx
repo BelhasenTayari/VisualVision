@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import yessImg from "@/assets/yessine.jpg";
 import kaisImg from "@/assets/kais.jpg";
 import ahmedImg from "@/assets/ahmed.jpg";
+import belhassenImg from "@/assets/belhassen.jpg";
 function About() {
     return (
         <div className="min-h-screen bg-deep-900 ">
@@ -303,7 +304,7 @@ function About() {
                         <div class="text-center text-gray-500 dark:text-gray-400">
                             <Image
                                 className="mx-auto mb-4 w-36 h-36 rounded-full hover:filter hover:brightness-125 hover:scale-105 transition-all duration-300"
-                                src={yessImg}
+                                src={belhassenImg}
                                 alt="Belhassen Tayari Avatar"
                                 width={100}
                                 height={100}
