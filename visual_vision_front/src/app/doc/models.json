@@ -1,0 +1,119 @@
+{
+    "algorithms": [
+        {
+            "name": "algo1",
+            "models": [
+                {
+                    "name": "sequential_1",
+                    "summary": {
+                        "params": "241546 (943.54 KB)",
+                        "trainable": "241546 (943.54 KB)",
+                        "non_trainable": "0 (0.00 Byte)"
+                    },
+                    "table": [
+                        {
+                            "id": 1,
+                            "layer": "conv2d_1 (Conv2D)",
+                            "shape": "(None, 26, 26, 32)",
+                            "param": 320
+                        },
+                        {
+                            "id": 2,
+                            "layer": "max_pooling2d_1 (MaxPooling2D)",
+                            "shape": "(None, 13, 13, 32)",
+                            "param": 0
+                        },
+                        {
+                            "id": 3,
+                            "layer": "dropout_1 (Dropout)",
+                            "shape": "(None, 13, 13, 32)",
+                            "param": 0
+                        },
+                        {
+                            "id": 4,
+                            "layer": "conv2d_2 (Conv2D)",
+                            "shape": "(None, 11, 11, 64)",
+                            "param": 18496
+                        },
+                        {
+                            "id": 5,
+                            "layer": "max_pooling2d_2 (MaxPooling2D)",
+                            "shape": "(None, 5, 5, 64)",
+                            "param": 0
+                        },
+                        {
+                            "id": 6,
+                            "layer": "dropout_2 (Dropout)",
+                            "shape": "(None, 5, 5, 64)",
+                            "param": 0
+                        },
+                        {
+                            "id": 7,
+                            "layer": "conv2d_3 (Conv2D)",
+                            "shape": "(None, 3, 3, 128)",
+                            "param": 73856
+                        },
+                        {
+                            "id": 8,
+                            "layer": "dropout_3 (Dropout)",
+                            "shape": "(None, 3, 3, 128)",
+                            "param": 0
+                        },
+                        {
+                            "id": 9,
+                            "layer": "flatten_1 (Flatten)",
+                            "shape": "(None, 1152)",
+                            "param": 0
+                        },
+                        {
+                            "id": 10,
+                            "layer": "dense_1 (Dense)",
+                            "shape": "(None, 128)",
+                            "param": 147584
+                        },
+                        {
+                            "id": 11,
+                            "layer": "dropout_4 (Dropout)",
+                            "shape": "(None, 128)",
+                            "param": 0
+                        },
+                        {
+                            "id": 12,
+                            "layer": "dense_2 (Dense)",
+                            "shape": "(None, 10)",
+                            "param": 1290
+                        }
+                    ]
+                },
+                {
+                    "name": "visionnet_1",
+                    "summary": {
+                        "params": "123456 (482.34 KB)",
+                        "trainable": "123456 (482.34 KB)",
+                        "non_trainable": "0 (0.00 Byte)"
+                    },
+                    "table": [
+                        
+                    ]
+                },
+                {
+                    "name": "xmodel_1",
+                    "summary": {
+                        "params": "789012 (307.62 KB)",
+                        "trainable": "789012 (307.62 KB)",
+                        "non_trainable": "0 (0.00 Byte)"
+                    },
+                    "table": [
+                        
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Algo2",
+            "models": [
+                
+            ]
+        }
+    ]
+}
