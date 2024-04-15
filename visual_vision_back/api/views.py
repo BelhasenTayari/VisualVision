@@ -35,8 +35,10 @@ class PredictImageView(APIView):
         with open(image_path, 'wb+') as destination:
             for chunk in image_file.chunks():
                 destination.write(chunk)
-
-        img = image.load_img(image_path, target_size=(28, 28), color_mode = "grayscale")
+        if int(model_id) in [1,2,3]:
+            img = image.load_img(image_path, target_size=(28, 28), color_mode = "grayscale")
+        else :
+             img = image.load_img(image_path, target_size=(32, 32), color_mode="rgb")
         img_array = image.img_to_array(img)
         img_array /= 255.0  
         img_array = np.expand_dims(img_array, axis=0)
@@ -45,8 +47,8 @@ class PredictImageView(APIView):
         prediction = model.predict(img_array)
         predicted_label = np.argmax(prediction)
         confidence = np.max(prediction)
-        predicted_class=''
-        if int(model_id)==1:
+        predicted_class=predicted_label
+        if int(model_id) in [1,2,3]:
             categories = {
                 0: "T-shirt/top",
                 1: "Trouser",
@@ -58,6 +60,20 @@ class PredictImageView(APIView):
                 7: "Sneaker",
                 8: "Bag",
                 9: "Ankle boot"
+            }
+            predicted_class=categories[predicted_label]
+        else:
+            categories = {
+                0: "Avion",
+                1: "Automobile",
+                2: "Oiseau",
+                3: "Chat",
+                4: "Cerf",
+                5: "Chien",
+                6: "Grenouille",
+                7: "Cheval",
+                8: "Navire",
+                9: "Camion"
             }
             predicted_class=categories[predicted_label]
 

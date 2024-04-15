@@ -4,7 +4,7 @@ const DatabaseSelection = ({ selectedDataBase, setselectedDataBase }) => {
   return (
     <div className="px-3 rounded-2xl">
       <h3 className="mb-5 text-2xl font-bold text-white">Choose Database:</h3>
-      <ul className="grid w-full gap-6 md:grid-cols-3">
+      <ul className="grid w-full gap-6 lg:grid-cols-3">
         <li>
           <input
             type="radio"
