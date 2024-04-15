@@ -1,12 +1,12 @@
 "use client";
 import Navbar from "@/components/Navbar";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import data from "./models.json";
 
 const Page = () => {
     const [selectedAlgorithm, setSelectedAlgorithm] = useState("");
     const [selectedModel, setSelectedModel] = useState("");
-
+    const [data, setData] = useState([]);
     const handleAlgorithmChange = (event) => {
         setSelectedAlgorithm(event.target.value);
     };
@@ -14,6 +14,16 @@ const Page = () => {
     const handleModelChange = (event) => {
         setSelectedModel(event.target.value);
     };
+    useEffect(() => {
+        const fetchModels = async () => {
+            const response = await fetch(
+                "http://127.0.0.1:8000/api/models"
+            ).json();
+            console.log(response);
+            setData(response);
+        };
+        fetchModels();
+    }, []);
 
     return (
         <div className="min-h-screen bg-deep-900 ">
@@ -24,7 +34,7 @@ const Page = () => {
 
             <div className="inline-flex ml-8 items-center justify-center py-2.5 px-4 text-sm font-medium text-gray-700">
                 <label htmlFor="algos" className="sr-only">
-                    Choose an algorithm
+                    Choose Dataset
                 </label>
                 <select
                     id="algos"
@@ -33,13 +43,11 @@ const Page = () => {
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg border-gray-100 dark:border-gray-700 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:ring-blue-500 focus:border-blue-500 block w-max p-2.5 mr-3"
                 >
                     <option value="" disabled>
-                        Choose an algorithm
+                        Choose Dataset
                     </option>
-                    {data.algorithms.map((algorithm, index) => (
-                        <option key={index} value={algorithm.name}>
-                            {algorithm.name}
-                        </option>
-                    ))}
+
+                    <option value="Fashion">Fashion</option>
+                    <option value="CIFAR-10">CIFAR-10</option>
                 </select>
 
                 <label htmlFor="models" className="sr-only">
@@ -54,14 +62,31 @@ const Page = () => {
                     <option value="" disabled>
                         Choose a model
                     </option>
-                    {selectedAlgorithm &&
-                        data.algorithms
-                            .find((algo) => algo.name === selectedAlgorithm)
-                            .models.map((model, index) => (
-                                <option key={index} value={model.name}>
-                                    {model.name}
-                                </option>
-                            ))}
+                    {data && selectedAlgorithm && selectedAlgorithm == "Fashion"
+                        ? data
+                              .filter(
+                                  (datum) =>
+                                      datum.id == 1 ||
+                                      datum.id == 2 ||
+                                      datum.id == 3
+                              )
+                              .map((opt, index) => (
+                                  <option key={index} value={opt.name}>
+                                      {opt.name}
+                                  </option>
+                              ))
+                        : data
+                              .filter(
+                                  (datum) =>
+                                      datum.id == 4 ||
+                                      datum.id == 5 ||
+                                      datum.id == 6
+                              )
+                              .map((opt, index) => (
+                                  <option key={index} value={opt.name}>
+                                      {opt.name}
+                                  </option>
+                              ))}
                 </select>
             </div>
 
