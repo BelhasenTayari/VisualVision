@@ -16,9 +16,8 @@ const Page = () => {
     };
     useEffect(() => {
         const fetchModels = async () => {
-            const response = await fetch(
-                "http://127.0.0.1:8000/api/models"
-            ).json();
+            const rsp = await fetch("http://127.0.0.1:8000/api/models");
+            const response = await rsp.json();
             console.log(response);
             setData(response);
         };
@@ -122,17 +121,11 @@ const Page = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {data.algorithms
-                                            .find(
-                                                (algo) =>
-                                                    algo.name ===
-                                                    selectedAlgorithm
-                                            )
-                                            .models.find(
+                                        {data.find(
                                                 (model) =>
                                                     model.name === selectedModel
                                             )
-                                            .table.map((item, index) => (
+                                            .architecture.table.map((item, index) => (
                                                 <tr
                                                     key={index}
                                                     className="border-b dark:border-gray-700"
@@ -156,17 +149,10 @@ const Page = () => {
                                     Total params:
                                     <span className="font-semibold text-gray-900 dark:text-white">
                                         {
-                                            data.algorithms
-                                                .find(
-                                                    (algo) =>
-                                                        algo.name ===
-                                                        selectedAlgorithm
-                                                )
-                                                .models.find(
-                                                    (model) =>
-                                                        model.name ===
-                                                        selectedModel
-                                                ).summary.params
+                                            data.find(
+                                                (model) =>
+                                                    model.name === selectedModel
+                                            ).summary.params
                                         }
                                     </span>
                                 </span>
@@ -174,17 +160,10 @@ const Page = () => {
                                     Trainable params:
                                     <span className="font-semibold text-gray-900 dark:text-white">
                                         {
-                                            data.algorithms
-                                                .find(
-                                                    (algo) =>
-                                                        algo.name ===
-                                                        selectedAlgorithm
-                                                )
-                                                .models.find(
-                                                    (model) =>
-                                                        model.name ===
-                                                        selectedModel
-                                                ).summary.trainable
+                                            data.find(
+                                                (model) =>
+                                                    model.name === selectedModel
+                                            ).summary.trainable
                                         }
                                     </span>
                                 </span>
@@ -192,17 +171,10 @@ const Page = () => {
                                     Non-trainable params:
                                     <span className="font-semibold text-gray-900 dark:text-white">
                                         {
-                                            data.algorithms
-                                                .find(
-                                                    (algo) =>
-                                                        algo.name ===
-                                                        selectedAlgorithm
-                                                )
-                                                .models.find(
-                                                    (model) =>
-                                                        model.name ===
-                                                        selectedModel
-                                                ).summary.non_trainable
+                                            data.find(
+                                                (model) =>
+                                                    model.name === selectedModel
+                                            ).summary.non_trainable
                                         }
                                     </span>
                                 </span>
