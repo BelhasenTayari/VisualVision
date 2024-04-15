@@ -152,7 +152,7 @@ const Page = () => {
                                             data.find(
                                                 (model) =>
                                                     model.name === selectedModel
-                                            ).summary.params
+                                            ).architecture.summary.params
                                         }
                                     </span>
                                 </span>
@@ -163,7 +163,7 @@ const Page = () => {
                                             data.find(
                                                 (model) =>
                                                     model.name === selectedModel
-                                            ).summary.trainable
+                                            ).architecture.summary.trainable
                                         }
                                     </span>
                                 </span>
@@ -174,7 +174,7 @@ const Page = () => {
                                             data.find(
                                                 (model) =>
                                                     model.name === selectedModel
-                                            ).summary.non_trainable
+                                            ).architecture.summary['non-trainable']
                                         }
                                     </span>
                                 </span>

@@ -11,7 +11,10 @@ class AIModel(models.Model):
     accuracy = models.DecimalField(decimal_places=2,max_digits=5,default=0.0)
     macro_avg = models.DecimalField(decimal_places=2,max_digits=5,default=0.0)
     wieghted_avg = models.DecimalField(decimal_places=2,max_digits=5,default=0.0)
+    confusion_matrix = models.ImageField(upload_to='images/',null=True)
+    architecture = models.JSONField(default=dict)
     model_file = models.FileField(upload_to='models/')
+    dataset = models.CharField(max_length=100,default='')
     created_at = models.DateTimeField(auto_now_add=True)
 
     def set_precision(self, array):
