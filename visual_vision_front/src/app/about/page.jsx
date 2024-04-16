@@ -5,11 +5,13 @@ import yessImg from "@/assets/yessine.jpg";
 import kaisImg from "@/assets/kais.jpg";
 import ahmedImg from "@/assets/ahmed.jpg";
 import belhassenImg from "@/assets/belhassen.jpg";
+import mohamedImg from "@/assets/mohamed.jpg";
+import haithemImg from "@/assets/haithem.jpg";
 function About() {
     return (
         <div className="min-h-screen bg-deep-900 ">
             <Navbar />
-            <section class="bg-white dark:bg-deep-900">
+            <section class="bg-deep-900">
                 <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
                     <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
                         <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
@@ -210,7 +212,7 @@ function About() {
                         <div class="text-center text-gray-500 dark:text-gray-400">
                             <Image
                                 className="mx-auto mb-4 w-36 h-36 rounded-full hover:filter hover:brightness-125 hover:scale-105 transition-all duration-300"
-                                src={ahmedImg}
+                                src={haithemImg}
                                 alt="Haithem Ben Slama Avatar"
                                 width={100}
                                 height={100}
@@ -494,7 +496,7 @@ function About() {
                         <div class="text-center text-gray-500 dark:text-gray-400">
                             <Image
                                 className="mx-auto mb-4 w-36 h-36 rounded-full hover:filter hover:brightness-125 hover:scale-105 transition-all duration-300"
-                                src={kaisImg}
+                                src={mohamedImg}
                                 alt="Mohamed Naouar Avatar"
                                 width={100}
                                 height={100}
@@ -546,7 +548,7 @@ function About() {
                                 </li>
                                 <li>
                                     <a
-                                        href="https://github.com/kaishajri01"
+                                        href="https://github.com/kingking123med"
                                         class="text-gray-900 hover:text-gray-900 dark:hover:text-white dark:text-gray-300"
                                     >
                                         <svg
