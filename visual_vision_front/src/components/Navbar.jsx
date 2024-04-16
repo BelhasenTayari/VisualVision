@@ -6,8 +6,8 @@ import { logo } from "../../public/assets";
 const Navbar = () => {
   const menuItems = [
     { name: "Home", href: "/" },
-    { name: "Documentation", href: "/doc" },
     { name: "Visual Vision WEB", href: "/classifier" },
+    { name: "Documentation", href: "/doc" },
     { name: "About Us", href: "/about" },
   ];
   const [isOpen, setIsOpen] = useState(false);

@@ -79,7 +79,7 @@ const DatabaseSelection = ({ selectedDataBase, setselectedDataBase }) => {
             className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer hover:text-gray-600 hover:bg-gray-50 relative"
           >
             <div className="block w-full text-center">
-              <div className="w-full text-lg font-semibold">Animals</div>
+              <div className="w-full text-lg font-semibold">CIFAR-10</div>
               <div className="w-full text-sm mb-2">
                 CIFAR-10 dataset from TensorFlow for animal and object
                 classification.
