@@ -22,7 +22,7 @@ const Navbar = () => {
             alt="Logo"
           />
           <span className="self-center text-2xl  whitespace-nowrap text-gray-200 font-oswald font-semibold">
-            Visual vision
+            Visual Vision
           </span>
         </a>
         <button
