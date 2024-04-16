@@ -1,8 +1,10 @@
 import IosButton from "@/components/IosButton";
 import Navbar from "@/components/Navbar";
 import PlayStoreButton from "@/components/PlayStoreButton";
+import Image from "next/image";
 import Link from "next/link";
 
+import homeImg from "@/assets/home.png";
 export default function Home() {
   return (
     <main className="min-h-screen bg-deep-900">
@@ -33,7 +35,7 @@ export default function Home() {
         <div className="w-full xl:w-3/5 py-6 overflow-y-hidden">
           <img
             className="w-5/6 mx-auto lg:mr-0 slide-in-bottom"
-            src="https://www.indidigital.in/wp-content/uploads/2024/02/mobile_app_promotion_services_packages_indidigital.png"
+            src="../assets/home.png"
           />
         </div>
 
