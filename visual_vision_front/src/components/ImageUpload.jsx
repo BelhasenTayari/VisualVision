@@ -21,7 +21,6 @@ const ImageUpload = ({ selectedDataBase, selectedArchitecture }) => {
       "clothing-deepvisionx": 3,
       "animals-visionarynet": 4,
       "animals-pixelsiftnet": 5,
-      "animals-deepvisionx": 6,
     };
     return mapping[`${selectedDataBase}-${selectedArchitecture}`] || 1;
   };
