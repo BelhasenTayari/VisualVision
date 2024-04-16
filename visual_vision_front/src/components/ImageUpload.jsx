@@ -14,15 +14,27 @@ const ImageUpload = ({ selectedDataBase, selectedArchitecture }) => {
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
   };
+  const getModelId = () => {
+    const mapping = {
+      "clothing-visionarynet": 1,
+      "clothing-pixelsiftnet": 2,
+      "clothing-deepvisionx": 3,
+      "animals-visionarynet": 4,
+      "animals-pixelsiftnet": 5,
+      "animals-deepvisionx": 6,
+    };
+    return mapping[`${selectedDataBase}-${selectedArchitecture}`] || 1;
+  };
 
   const handleSubmit = () => {
     if (selectedFile) {
       setIsLoading(true);
       const formData = new FormData();
       formData.append("image", selectedFile);
-      formData.append("model_id", 1);
+      formData.append("model_id", getModelId());
+      console.log(getModelId());
 
-      fetch("http://127.0.0.1:8000/api/predict/", {
+      fetch(`http://127.0.0.1:8000/api/predict/`, {
         method: "POST",
         body: formData,
       })
